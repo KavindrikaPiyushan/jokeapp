@@ -52,7 +52,7 @@ class _JokeListPageState extends State<HomePage> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [Colors.orange.shade100, Colors.pink.shade50],
+            colors: [Colors.blueGrey.shade900, Colors.blueGrey.shade800],
           ),
         ),
         child: Padding(
@@ -64,11 +64,11 @@ class _JokeListPageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Welcome to the Joke App!',
+                    'Welcome!',
                     style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                          fontSize: 26,
+                          fontSize: 28,
                           fontWeight: FontWeight.bold,
-                          color: Colors.pink[800],
+                          color: Colors.tealAccent,
                         ),
                   ),
                   const SizedBox(width: 10),
@@ -77,16 +77,16 @@ class _JokeListPageState extends State<HomePage> {
                     height: 30,
                     width: 30,
                     colorFilter: const ColorFilter.mode(
-                        Colors.pink, BlendMode.srcIn),
+                        Colors.tealAccent, BlendMode.srcIn),
                   ),
                 ],
               ),
               const SizedBox(height: 16),
               Text(
-                'Discover programming jokes by fetching new ones!',
+                'Discover programming jokes!',
                 style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                       fontSize: 16,
-                      color: Colors.pink[700],
+                      color: Colors.white70,
                       fontStyle: FontStyle.italic,
                     ),
                 textAlign: TextAlign.center,
@@ -95,7 +95,7 @@ class _JokeListPageState extends State<HomePage> {
               ElevatedButton(
                 onPressed: _fetchJokes,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.orange,
+                  backgroundColor: Colors.teal,
                   foregroundColor: Colors.white,
                   textStyle: const TextStyle(
                     fontSize: 18,
@@ -103,17 +103,19 @@ class _JokeListPageState extends State<HomePage> {
                   ),
                   minimumSize: const Size(0, 50),
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(12.0),
                   ),
+                  shadowColor: Colors.black54,
+                  elevation: 5,
                 ),
-                child: const Text('Fetch Jokes'),
+                child: const Text('I Need Jokes'),
               ),
               const SizedBox(height: 24),
               Expanded(
                 child: _isLoading
                     ? const Center(
-                        child: CircularProgressIndicator(
-                            color: Colors.orange))
+                        child:
+                            CircularProgressIndicator(color: Colors.tealAccent))
                     : _buildJokeList(),
               )
             ],
@@ -128,7 +130,7 @@ class _JokeListPageState extends State<HomePage> {
       return const Center(
         child: Text(
           'No jokes fetched yet.',
-          style: TextStyle(fontSize: 18, color: Colors.pink),
+          style: TextStyle(fontSize: 18, color: Colors.tealAccent),
         ),
       );
     }
@@ -148,10 +150,10 @@ class _JokeListPageState extends State<HomePage> {
         style: TextStyle(
           fontWeight: FontWeight.bold,
           color: Colors.white,
-          fontSize: 22,
+          fontSize: 24,
         ),
       ),
-      backgroundColor: Colors.pink,
+      backgroundColor: Colors.teal,
       centerTitle: true,
       leading: GestureDetector(
         onTap: () {},
